@@ -1,0 +1,159 @@
+body{
+    background-color: rgb(219, 219, 219);
+    margin:0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.cat-wrapper{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 8;
+    top: 75%;
+    left: 18%;
+}
+
+.title-wrapper{
+    font-family: "Coiny", system-ui;
+    color: rgb(41, 41, 41);
+    position: absolute;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 8;
+    top: 5%;
+    left: 40%;
+}
+.bathroom-wrapper, .bedroom-wrapper, .kitchen-wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+}
+.bedroom-wrapper, .kitchen-wrapper{
+    position: absolute;
+    margin-top: 25%;
+    display:none
+}
+.bathroom{
+    width: 60%;
+    height: auto;
+    z-index: 1;
+    margin-top: 10%;
+}
+
+.bedroom{
+    position:absolute;
+    width: 60%;
+    height: auto;
+    z-index: 3;
+    margin-top: 10%;
+}
+
+
+.kitchen{
+    position:absolute;
+    width: 60%;
+    height: auto;
+    z-index: 5;
+    margin-top: 10%;
+}
+
+.food{
+    position: absolute;
+    width: 7%;
+    margin-left: 35%;
+    margin-top: 20%;
+    z-index: 6;
+}
+
+.bed{
+    position: absolute;
+    width: 13%;
+    margin-left: -3%;
+    margin-top: 18%;
+    z-index: 4;
+}
+
+.toy1{
+    position: absolute;
+    width: 25%;
+    margin-left: -16%;
+    margin-top: 10%;
+    z-index: 5;
+}
+.toy2{
+    position: absolute;
+    width: 5%;
+    margin-left: 1%;
+    margin-top: 30%;
+    z-index: 5;
+}
+
+.bath1, .bath2{
+    position: absolute;
+    width: 18%;
+    margin-left: 27%;
+    margin-top: 5%;
+}
+
+.sink1, .sink2{
+    position: absolute;
+    width: 10%;
+    margin-left: -29%;
+    margin-top: 1%;
+}
+
+.bath1, .sink1{
+    z-index: 2;
+    cursor: pointer;
+}
+
+.bath2, .sink2{
+    z-index: 3;
+    display: none;
+    pointer-events: none;
+}
+
+.button-wrapper{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 1;
+    left: 37%;
+    top: 30%;
+}
+
+.button1 img, .button2 img, .button3 img{
+    width: 15%;
+    height: auto;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.button1, .button2, .button3{
+    border:none;
+    background:none;
+}
+
+.button1:hover, .button2:hover, .button3:hover{
+    filter: brightness(110%);
+}
+
+.text-wrapper{
+    font-family: "Coiny", system-ui;
+    position: absolute;
+    font-size: 50px;
+    left: 5%;
+    top:40%;
+    line-height: 100px;
+    color:rgb(66, 62, 62)
+}

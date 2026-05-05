@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+		<script src="script1.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coiny&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="title-wrapper">
+			<p class="title">TAMAGOTCHI</p>
+		</div>
+		<div class="cat-wrapper">
+			<img class="cat" src="pictures/1000060048.gif">
+		</div>
+		<div class="bathroom-wrapper">
+			<img class="bathroom" src="pictures/Untitled405_20260420093635.png" alt="bathroom" >
+			<img class="bath1" src="pictures/1000060135.png" alt="bath" onclick="toggleWater()">
+			<img class="bath2" src="pictures/1000060134.png" id="water" >
+			<img class="sink1" src="pictures/1000060137.png" alt="sink" onclick="toggleWater1()">
+			<img class="sink2" src="pictures/1000060136.png" id="water1">
+		</div>
+		<div class="bedroom-wrapper">
+			<img class="bedroom" src="pictures/Untitled405_20260422100437.png" alt="bedroom">
+			<img class="bed" src="pictures/Untitled405_20260422100503.png">
+			<img class="toy1" src="pictures/Untitled405_20260422100545.png">
+			<img class="toy2" src="pictures/Untitled405_20260422100558.png">
+	    </div>
+		<div class="kitchen-wrapper">
+			<img class="kitchen" src="pictures/Untitled405_20260422102551.png">
+			<img class="food" src="pictures/Untitled405_20260422102634.png">
+		</div>
+
+		<div class="button-wrapper">
+		 <button class="button1" onclick="showRoom('bathroom-wrapper')"><img src="pictures/Untitled423_20260427101444.png"></button>
+		 <button class="button2" onclick="showRoom('bedroom-wrapper')"><img src="pictures/Untitled423_20260427101229.png"></button>
+		 <button class="button3" onclick="showRoom('kitchen-wrapper')"><img src="pictures/Untitled423_20260427101531.png"></button>
+		</div> 
+
+		<div class="text-wrapper">
+			<div class="hunger">Hunger: <span id="num1">50</span>%</div>
+			<div class="hygiene">Hygiene: <span id="num2">50</span>%</div>
+			<div class="sleep">Sleep: <span id="num3">50</span>%</div>
+			<div class="joy">Joy: <span id="num4">50</span>%</div>
+		</div>
+	</body>
+</html>
