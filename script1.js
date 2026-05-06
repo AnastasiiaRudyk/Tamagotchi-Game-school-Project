@@ -15,59 +15,49 @@ function toggleWater1() {
         water1.style.display = "none";
     }
 }
-
 class Pet {
     constructor() {
-        this.hunger = 50;
-        this.hygiene = 50;
-        this.sleep = 50;
-        this.joy = 50;
-        this.currentRoom = "bathroom-wrapper";
+      this.hunger = 50;
+      this.hygiene = 50;
+      this.sleep = 50;
+      this.joy = 50;
+      this.room = 'bathroom';
     }
-
-    updateNumber() {
-        const ids = ["num1", "num2", "num3", "num4"];
-        const values = [this.hunger, this.hygiene, this.sleep, this.joy];
-        
-        ids.forEach((id, index) => {
-            const el = document.getElementById(id);
-            if (el) el.innerText = values[index];
-        });
-    }
-
+  
     tick() {
-        this.hunger = Math.min(100, this.hunger - 2);
-        this.joy = Math.max(0, this.joy - 2);
-        this.hygiene = Math.max(0, this.hygiene - 2);
-        this.sleep = Math.max(0, this.sleep - 2);
-
-        if (this.currentRoom === 'bathroom-wrapper') {
-            this.hygiene = Math.min(100, this.hygiene + 10);
-        }
-        if (this.currentRoom === 'bedroom-wrapper') {
-            this.joy = Math.min(100, this.joy + 5);
-            this.sleep = Math.min(100, this.sleep + 10);
-        }
-        if (this.currentRoom === 'kitchen-wrapper') {
-            this.hunger = Math.max(0, this.hunger + 10);
-        }
-
-        this.updateNumber();
+      this.hunger -= 2;
+      this.hygiene -= 2;
+      this.sleep -= 2;
+      this.joy -= 2;
+  
+      if (this.room === 'bathroom') this.hygiene += 12;
+      if (this.room === 'kitchen') this.hunger += 12;
+      if (this.room === 'bedroom') { 
+        this.sleep += 12; 
+        this.joy += 7; 
+      }
+  
+      this.render();
     }
-}
-
-const myPet = new Pet();
-setInterval(() => myPet.tick(), 1000);
-
-function showRoom(name) {
-    const rooms = ['.bathroom-wrapper', '.bedroom-wrapper', '.kitchen-wrapper'];
-    rooms.forEach(room => {
-        const el = document.querySelector(room);
-        if (el) el.style.display = 'none';
+  
+    render() {
+      document.getElementById('num1').innerText = this.hunger;
+      document.getElementById('num2').innerText = this.hygiene;
+      document.getElementById('num3').innerText = this.sleep;
+      document.getElementById('num4').innerText = this.joy;
+    }
+  }
+  
+  const myPet = new Pet();
+  setInterval(() => myPet.tick(), 1000);
+  
+  function showRoom(name) {
+    document.querySelectorAll('[class$="-wrapper"]').forEach(el => {
+      el.style.display = 'none';
     });
-
-    const activeRoom = document.querySelector('.' + name);
-    if (activeRoom) activeRoom.style.display = 'flex';
     
-    myPet.currentRoom = name;
-}
+    const active = document.querySelector(`.${name}-wrapper`);
+    if (active) active.style.display = 'flex';
+    myPet.room = name;
+  }
+  
